@@ -139,6 +139,15 @@ enum IcaoPrefixes {
     /// True for Viet Nam (VV..), served by the Viet Nam eAIP.
     static func isVietnam(_ icao: String) -> Bool { icao.startsWithCI("VV") }
 
+    /// True for Bhutan (VQ..), served by the Bhutan AIP (Department of Air Transport).
+    static func isBhutan(_ icao: String) -> Bool { icao.startsWithCI("VQ") }
+
+    /// True for Nepal (VN..), served by the Nepal eAIP (CAAN).
+    static func isNepal(_ icao: String) -> Bool { icao.startsWithCI("VN") }
+
+    /// Kai Tak (VHHX), Hong Kong's airport until 1998: not in the Hong Kong eAIP, served by the IVAO archive.
+    static func isKaiTak(_ icao: String) -> Bool { icao.uppercased() == "VHHX" }
+
     /// True for Indonesia (WA.., WI.., WQ.., WR..). Its official AIP needs a login, so there is no built-in source.
     static func isIndonesia(_ icao: String) -> Bool {
         let c = chars(icao)

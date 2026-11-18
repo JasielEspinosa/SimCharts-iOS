@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var text = ""
     @State private var showSettings = false
     @State private var showNotes = false
+    @State private var showCountries = false
     @State private var showAbout = false
     @State private var deleteTarget: TreeNode?
     @FocusState private var icaoFocused: Bool
@@ -38,6 +39,7 @@ struct ContentView: View {
                     Menu {
                         Button("Settings") { showSettings = true }
                         Button("Refresh list") { model.refreshTree() }
+                        Button("Supported countries") { showCountries = true }
                         Button("Notes") { showNotes = true }
                         Button("About") { showAbout = true }
                     } label: {
@@ -48,6 +50,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSettings) { SettingsView() }
         .sheet(isPresented: $showNotes) { NotesView() }
+        .sheet(isPresented: $showCountries) { SupportedCountriesView() }
         .sheet(isPresented: selectionBinding) {
             if let airports = model.selection {
                 SelectChartsView(

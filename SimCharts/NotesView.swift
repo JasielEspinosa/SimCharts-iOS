@@ -11,6 +11,9 @@ struct NotesView: View {
         "Taiwan: Taiwan eAIP (ais.caa.gov.tw)",
         "Korea: Korea eAIP (aim.koca.go.kr)",
         "Viet Nam: Viet Nam eAIP (aim.vatm.vn)",
+        "Bhutan: Bhutan AIP (doat.gov.bt), one PDF per airport (its AD 2 section)",
+        "Nepal: Nepal eAIP (e-aip.caanepal.gov.np), one PDF per airport; Kathmandu VNKT is about 70 MB",
+        "Kai Tak (VHHX): frozen community charts from IVAO East Asia; not current, not official",
         "Japan: unofficial AIP Japan mirror (nagodede.github.io); the AIRAC date is shown in the download log and it may be out of date.",
         "Indonesia: the official AIP needs a free login (aimindonesia.kemenhub.go.id), so it cannot be downloaded here; save its PDFs into the SimCharts folder of the Files app yourself.",
     ]
@@ -22,6 +25,9 @@ struct NotesView: View {
                     Text("For flight simulation use only - not for real-world navigation.")
                     Text("Chart sources:").fontWeight(.semibold)
                     ForEach(sources, id: \.self) { Text($0) }
+                    Text("The full list of countries is under the menu > Supported countries.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
                     Text("Other countries: add your own source in Settings > Custom Resources.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)

@@ -188,6 +188,7 @@ enum FaaChartTypes {
         case "SMAC": return "Surveillance Minimum Altitude"
         case "HLL", "HZMB", "CTR", "ATOC", "AERO": return "Other"
         case "DATA": return "Procedure Data Tables"
+        case "AD2": return "Aerodrome Section (AD 2)"
         case "PDF": return "Charts"
         default: return code
         }

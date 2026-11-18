@@ -37,11 +37,14 @@ enum ChartResolver {
         }
 
         if IcaoPrefixes.isPhilippines(icao) { return try await VatphilSource.find(icao) }
+        if IcaoPrefixes.isKaiTak(icao) { return try await KaiTakSource.find(icao) }
         if IcaoPrefixes.isHongKongAis(icao) { return try await HkAisSource.find(icao) }
         if IcaoPrefixes.isTaiwan(icao) { return try await TaiwanCaaSource.find(icao) }
         if IcaoPrefixes.isKorea(icao) { return try await KoreaAimSource.find(icao) }
         if IcaoPrefixes.isJapan(icao) { return try await JapanMirrorSource.find(icao) }
         if IcaoPrefixes.isVietnam(icao) { return try await VietnamAipSource.find(icao) }
+        if IcaoPrefixes.isBhutan(icao) { return try await BhutanDoatSource.find(icao) }
+        if IcaoPrefixes.isNepal(icao) { return try await NepalCaanSource.find(icao) }
 
         if IcaoPrefixes.isIndonesia(icao) {
             throw ChartSourceError(
